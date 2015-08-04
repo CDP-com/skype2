@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>Multiple Skype Sessions | SnapBack Apps</title>
+
+	<!--TEMPLATE STYLE SHEETS --> 
+    <link rel ="stylesheet" type="text/css" href="../common/css/style.css" title="style" />
+
+    <!--APP EXTERNAL JAVASCRIPT FILES --> 
+    
+    <!-- SCRIPTS FOR TABS --> 
+	<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../common/js/tabs.js"></script> 
+
+    <!--MENU JAVASCRIPT FILES --> 
+	<script type="text/javascript" src="../common/menu/cdptree.js"></script>  
+	<script type="text/javascript" src="../common/menu/metree.js"></script>
+	<script type="text/javascript">
+		var menuarray = new Array();
+	</script>
+	<script type="text/javascript">
+      function getRelativeURL()
+      {
+         var relURL = "";
+         var strhref = document.location.href;
+         var array_url = strhref.split('/');
+         var arraylength = array_url.length;
+         if (arraylength > 2)
+         {
+            relURL = "../" + array_url[arraylength - 2] + "/" + array_url[arraylength - 1];
+         }
+         else
+         {
+            relURL = document.location.href;
+         }
+
+         return relURL;
+      }
+		
+      //var nodeURL = getUrlParts(document.location.href).search;
+		var treemenu01;
+
+		function loadTree(divid,treeName,nodeURL,jv){
+		//alert();
+		//alert ("In initTree()");
+			var str="";
+			var tmptree;
+		// divid == tree[treeName] == var name for the treemenu
+		// jsonVar == eval(treeName);
+		// nodeURL = string node url, this is the node that the tree will be opened to and focused on
+			tmptree = new cdpTree(divid,treeName,nodeURL);
+			tmptree.readScript(jv).renderTree();
+
+			tmptree.setKeyEvent(divid);
+			treemenu01=tmptree;
+			menuarray[divid]= tmptree;
+		}
+		window.onload = function(){
+			document.getElementById('treemenu01').focus();
+		}
+	</script>
+
+    <script>
+
+        function HideContent()
+        {
+            if (document.getElementById) { // DOM3 = IE5, NS6 
+                document.getElementById('primary').style.display = 'none';
+            } else { 
+                if (document.layers) { // Netscape 4 
+                    document.primary.visibility = 'hidden'; 
+                } else { // IE 4 
+                    document.all.primary.style.visibility = 'hidden'; 
+                } 
+            }
+        }
+
+        function ShowContent()
+        {
+            if (document.getElementById) { // DOM3 = IE5, NS6 
+                document.getElementById('primary').style.display = 'block';
+            } else { 
+                if (document.layers) { // Netscape 4 
+                    document.primary.visibility = 'visible'; 
+                } else { // IE 4 
+                    document.all.primary.style.visibility = 'visible'; 
+                } 
+            } 
+        }
+        
+        function SetContent () {
+            var div = document.getElementById ("demoDiv");
+            div.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src=\"skypelogon.gif\" width=500 height=300 alt=\"Demo Image\"/>";
+            setTimeout("DeleteContent()", 3000);
+            setTimeout("ShowContent()", 3000);
+        }
+
+        function DeleteContent () {
+            var div = document.getElementById ("demoDiv");
+            div.innerHTML = "";
+        }
+        
+        function doDemo()
+        {
+            HideContent();            
+            SetContent();
+        }
+
+    </script>
+
+</head>
+
+<body>
+<div id="page">
+   
+    <div id="header">
+   		 <div id="header-container">
+				<div id="logo">
+					<img src="../common/media/snapback-apps-logo.png" alt="" />
+				</div>
+
+				<div id="app_title">
+					Multiple Skype Sessions
+               <div>
+                  <a id="devpage" href="http://ec2-107-21-143-74.compute-1.amazonaws.com/testoc/index.php/app/2nd-skype-session/" title="Multiple Skype Sessions Collaboration and Development" style="text-decoration:none">Collaborate Here!</a>
+   				</div>
+				</div>
+		</div>
+    </div>
+
+    <div id="contentwrapper">
+    
+    	<div id="secondary">
+			<div id="treemenu01" tabindex="0">
+				<script type="text/javascript">
+           		var nodeURL = getRelativeURL();
+					loadTree('treemenu01', 'menu01', nodeURL, menu01);
+				</script>
+			</div>
+		</div><!--End Secondary-->
+		
+        <div id="demoDiv"></div>
+        
+		<div id="primary">
+		
+				<ul class="tabs">
+					<li><a href="#tab1">Overview</a></li>
+					<li><a href="#tab2">Technical Details</a></li>
+					<li><a href="#tab3">FAQ</a></li>
+					<li><a href="#tab4">Terms of Use</a></li>
+				</ul>
+				
+				<div id="tab1">
+					<div id="run">
+						<a title="Run Multiple Skype Sessions (DEMO)" href="#" id="runApp" onclick="javascript:doDemo()"><img src="../common/media/run.jpg" alt=""/></a><br />
+						<a title="Run Multiple Skype Sessions (DEMO)" href="#" id="runApp" onclick="javascript:doDemo()">Run</a><br />
+					</div>
+					
+					<div id="description">
+						<p>The Multiple Skype Sessions App allows the user to open Skype as many times as the button is pressed.  This is useful if you need to log into Skype with another account.</p>
+					</div>
+				
+				</div>
+				
+				<div id="tab2">
+					<p>The Multiple Skype Sessions App is used on Microsoft Windows operating systems.</p>
+					<h3>Script Source Code</h3>
+					<p><iframe id="srccode" name="srccode" width=100% height="500" frameborder="0" scrolling="auto" src="openskype2.txt" seamless sandbox=""></iframe></p>
+				</div>
+				
+				<div id="tab3">
+					<p>
+					<strong>Q:</strong> What does this app do?<br />
+					<strong>A:</strong> It opens a second skype account so that you can run multiple skype sessions concurrently.
+					</p>
+					
+					<p>
+					<strong>Q:</strong> Who is this app for?<br />
+					<strong>A:</strong> It's for anyone who has skype.
+					</p>
+				</div>
+				
+				<div id="tab4">
+					<strong>Terms</strong>
+				
+					<p>You acknowledge and agree that any and all content you submit on this site shall remain the exclusive property of Columbia Data Products, Incorporated (CDP). This includes, but is not limited to, the applications, materials, products or processes You may create which are based on or utilize CDP Software, including the contents of Blogs, Forums, Groups, or any content not specifically listed but to be known as part of CDP.</p>
+
+					<p>You hereby release and covenant not to hold liable CDP or its Affiliates, or any of their licensees, assigns or successors, for any and all damages, liabilities, causes of action, judgments or claims (a) pertaining to any intellectual property You develop that is based on, uses, or relates to CDP Software; and (b) which otherwise may arise in connection with Your use of, reliance on, or reference to CDP Software. As between You and CDP, CDP and its licensors retain the IP Rights in and to CDP Software and any derivative works thereto created by or for CDP or its licensors.</p>
+
+					<p>Further, You agree that You will not remove, obscure, make illegible or alter any notices or indications of any IP Rights and/or CDP’s rights and ownership thereof, whether such notice or indications are affixed on, contained in or otherwise connected to such materials.</p>
+
+					<strong>Expectations of Service</strong>
+
+					<p>CDP’s role is to provide a platform for people who want to take advantage of the global community of customers and product experts. While CDP will monitor content and try to ensure the accuracy of the information, any information provided by CDP staff is offered "AS IS" with no warranties, and no rights are conferred. Each member assumes all the risk of use.</p>
+				</div>
+				
+				<div style="clear: both;"></div>
+								
+		</div><!--End Primary-->
+      
+    </div><!--End Content Wrapper-->
+		    
+    <div id="footer">
+    	<div id="footer-container">
+    		<p>Copyright &copy; 2013-2015 Columbia Data Products. All rights reserved.</p>
+    	</div>
+    </div>
+    
+</div><!--End Page-->
+
+
+</body>
+</html> 
+
