@@ -9,3 +9,4 @@ Add any notes you may find pertinent
 Changelog
 ----
 Add the various changes made between versions.
+mstiles - fixed Unable to connect to Skype bug. Script was looking for 64 bit program file.
