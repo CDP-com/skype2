@@ -1,7 +1,16 @@
 // JavaScript Document: openskype2.js
 // Open second instance of skype
+var is64bit = fnFileExists("C:\\Program Files (x86)\\Skype\\Phone\\Skype.exe");
 var shell = new ActiveXObject("WScript.Shell");
-var myProgramFiles = shell.ExpandEnvironmentStrings( "%ProgramFiles%" );
+var myProgramFiles = "";
+if (is64bit)
+{
+  myProgramFiles = shell.ExpandEnvironmentStrings( "%ProgramFiles(x86)%" );
+}
+else
+{
+  myProgramFiles = shell.ExpandEnvironmentStrings( "%ProgramFiles%" );
+}
 var ef = "/secondary";
 var eff = fnToLocalURL( escape( myProgramFiles + '\\Skype\\Phone\\Skype.exe') );
 eff += " " + ef;
@@ -50,3 +59,25 @@ function fnToLocalURL( strEscaped )
     return sReturn;
 }
 
+function fnFileExists( psFilename )
+{
+    var lSuccess;
+
+    var objUpd = new ActiveXObject ( "WScript.Shell" );
+    var sPathFilename = objUpd.ExpandEnvironmentStrings( psFilename );
+
+    var fso = new ActiveXObject( "Scripting.FileSystemObject" );
+    if ( ! fso.FileExists( sPathFilename ) )
+    {
+        lSuccess = false;
+    }
+    else
+    {
+        lSuccess = true;
+    }
+
+    fso = null;
+    objUpd = null;
+
+    return lSuccess;
+}
