@@ -8,5 +8,5 @@ Add any notes you may find pertinent
 
 Changelog
 ----
-Add the various changes made between versions.
-mstiles - fixed Unable to connect to Skype bug. Script was looking for 64 bit program file.
+11/06/2015 - fixed Unable to connect to Skype bug. Script was looking for 64 bit program file.
+10/28/2015, mstiles, Adding readme.md (change log info) to manifest
