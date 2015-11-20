@@ -108,6 +108,12 @@
 			treemenu01=tmptree;
 			menuarray[divid]= tmptree;
 		}
+      
+      function pageScroll() {
+         window.scrollTo(0,top);
+         scrolldelay = setTimeout('pageScroll()', 200);
+      }
+
       window.onload = function(){
          var treemenuobj = document.getElementById('treemenu01');
          if (treemenuobj)
@@ -115,6 +121,7 @@
             if (document.getElementById('treemenu01').visible)
                document.getElementById('treemenu01').focus();
          }
+         pageScroll();
       }
 </script>
 <script type="text/javascript" src="../common/scripts/onlinecheck.js"></script>
