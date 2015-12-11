@@ -123,6 +123,11 @@
          }
       }
 </script>
+<script>
+    $(document).ready(function() {
+        $('.menu-link').bigSlide();
+    });
+</script>
 <script type="text/javascript" src="../common/scripts/onlinecheck.js"></script>
 <!-- ************************************************ -->
 <!--               END: Required Scripts              -->
@@ -135,33 +140,9 @@
 
 
 <!-- ************************************************ -->
-<!--        START: Header - Edit ONLY App Title       -->
-<!-- ************************************************ -->
-<script type="text/javascript" src="../common/template/header1.js"></script>
-
-	<!-- App Title - Edit This Section -->
-		Multiple Skype Sessions
-			<!-- Include a Link to your App's Connect Page -->
-			<div>
-                <a id="devpage" href="http://factory.snapback-apps.com/app/2nd-skype-session/" title="Multiple Skype Sessions Collaboration and Development" style="text-decoration:none">Collaborate with Developers Here!</a>
-				&nbsp;|&nbsp;
-				<a id="webapp" href="http://snapback-apps.com/skype2/main.html" title="View this App on the Web and in your Browser">View App on the Web</a>
-   			</div>
-			<!-- End Connect Link -->
-	<!-- End App Title -->
-
-<script type="text/javascript" src="../common/template/header2.js"></script>
-<!-- ************************************************ -->
-<!--                    END: Header                   -->
+<!--  START: Left Sidebar - DO NOT EDIT THIS SECTION  -->
 <!-- ************************************************ -->
 
-
-
-
-
-<!-- ************************************************ -->
-<!--     START: Sidebar - DO NOT EDIT THIS SECTION    -->
-<!-- ************************************************ -->
 <script type="text/javascript" src="../common/template/sidebar1.js"></script>
 
 	<script type="text/javascript">
@@ -170,8 +151,9 @@
 	</script>
 
 <script type="text/javascript" src="../common/template/sidebar2.js"></script>
+
 <!-- ************************************************ -->
-<!--                   END: Sidebar                   -->
+<!--                 END: Left Sidebar                -->
 <!-- ************************************************ -->
 
 
@@ -181,35 +163,39 @@
 <!-- ************************************************ -->
 <!--      START: Page Content - Edit this Section     -->
 <!-- ************************************************ -->
-<ul class="tabs">
-    <li><a href="#tab1" title="Run this App from Here">Home</a></li>
-    <li><a href="#tab2" title="This App is free to Use">Pricing</a></li>
-    <li><a href="#tab3" title="The technical details of what this App does">How it Works</a></li>
-    <li><a href="#tab4" title="Record of Each Committee's work and report to users">What's Certified</a></li>
-    <li><a href="#tab5" title="Here's how you can help make this App better">Improve this App</a></li>
-	<li><a href="#tab6" title="Here's how you can help the SnapBack Apps Project">SnapBack Apps Project</a></li>
-</ul>
+<div id="app-intro">
+	<div class="app-name">
+		Multiple Skype Sessions
+	</div><!--End #app-name-->
+	
+	<div class="producer-credits">
+		<img src="../common/media/default-group-icon.png" alt="Group Name"/>
+		<a id="connect" href="http://factory.snapback-apps.com/app/2nd-skype-session/" title="Connect with the Developers of this App"><!--Include a Link to your App's Connect Page-->
+		Produced by the App Helpers Group<br />
+		Suggest / Contribute / Get Help
+		</a>
+	</div><!--End #producer-credits-->
+</div><!--End #app-intro-->
+
+<div id="tab-container">
+	<div id="tabnav">
+		<ul class="tabs">
+			<li><a href="#tab1" title="Run this App from Here">App Home</a></li>
+			<li><a href="#tab2" title="The technical details of what this App does">How it Works</a></li>
+			<li><a href="#tab3" title="This App is free to Use">Pricing</a></li>
+			<li><a href="#tab4" title="Record of Each Committee's work and report to users">What's Certified</a></li>
+		</ul>
+		<span></span>
+	</div><!--End #tabs-->
+</div><!--End #tab-container -->
+
+<div id="content-container">
       				
 <div id="tab1">
-	
-	<div id="main-side">
-		<strong>NEED HELP?</strong><br />
-
-		<a id="helpers" href="http://factory.snapback-apps.com/app/2nd-skype-session/" title="The Multiple Skype Sessions App">The Multiple Skype Sessions App</a><br>
-		<p>Thanks for using our App.  Join us and help by visiting our home page!</p>
-				
-		<hr />
-								
-		<p><a id="standarduser" href="#" title="This will be a Standard Link for Users to Help Develop the SnapBack Apps Project">Help us help you! Improve the SnapBack Apps Project</a></p>
-
-	</div>
 			
     <p>The Multiple Skype Sessions App allows the user to open Skype as many times as the button is pressed.  This is useful if you need to log into Skype with another account.</p>
 						
 	<table class="main-table">
-		<tr>
-			<td colspan="2"><hr /></td>
-		</tr>
 		<tr>
 			<td style="width: 25%;">
 				<div id="cdpbutton1">
@@ -220,16 +206,22 @@
 				
 			</td>
 		</tr>
-		<tr>
-			<td style="border: none;" colspan="2"><hr /></td>
-		</tr>
 	</table>
             
 	<div style="clear: both"></div>
   				
 </div><!--End Tab1-->
-      				
+      			    				
 <div id="tab2">
+			
+	<p>The Multiple Skype Sessions App is used on Microsoft Windows operating systems.</p>
+	
+	<h3>Script Source Code</h3>
+	<p><iframe id="srccode" name="srccode" width=100% height="500" frameborder="0" scrolling="auto" src="openskype2.txt" seamless sandbox=""></iframe></p>
+			
+</div><!--End Tab2-->
+
+<div id="tab3">
 
 	<p><strong>No Cost to You.</strong></p>
 	
@@ -239,15 +231,6 @@
 	
 	<strong>How We Make Our Money...</strong>
   
-</div><!--End Tab2-->
-      				
-<div id="tab3">
-			
-	<p>The Multiple Skype Sessions App is used on Microsoft Windows operating systems.</p>
-	
-	<h3>Script Source Code</h3>
-	<p><iframe id="srccode" name="srccode" width=100% height="500" frameborder="0" scrolling="auto" src="openskype2.txt" seamless sandbox=""></iframe></p>
-			
 </div><!--End Tab3-->
       				
 <div id="tab4">
@@ -317,72 +300,10 @@
 			
 </div><!--End Tab4-->
       
-<div id="tab5">
-			
-	<p><strong>There's a number of ways you can help with this App and users like you:</strong></p>
 
-	<ul>
-		<li><a id="uicontent" href="http://factory.snapback-apps.com/app/2nd-skype-session/ui-content/" title="Your App's UI & Content Page"> UI & Content</a> - Request changes in the content or look of our App by editing a moderated version of the UI and Content page.</li>
-		<li><a id="requestfeature" href="http://factory.snapback-apps.com/app/2nd-skype-session/request-new-features/" title="Your App's Feature Request Page"> Request a Feature</a> - Want something extra? Request it by editing a moderated version of our Feature Request page.</li>
-		<li><a id="reportbug" href="http://factory.snapback-apps.com/app/2nd-skype-session/issues-bugs/" title="Your App's Issues and Bugs Page"> Report a Bug or Issue</a> - Find something that does not work right? Report your bug or issue by editing a moderated version of the bug reporting page.</li>
-	</ul>
-
-	<h3>We Appreciate your Help!</h3>
-	<p>This app was created with developers working in collaboration with users like you. We want your input and value your contributions for this app!</p>
-
-			
-</div><!--End Tab5-->
-		
-<div id="tab6">
-
-	<p>When software or hardware frustrates you, let us try to help:<br>
-	&nbsp;&nbsp;&nbsp;- Browse the index on the left to see if there is already a solution, since more will be added daily.<br>
-	&nbsp;&nbsp;&nbsp;- When your solution or frustration is not listed, since once we hear you, we'll quickly create those solutions.<br>
-	</p>
-
-	<h3>Tell others:</h3>
-	<p>Show how a SnapBack App is a solution to an asked question on sites like SuperUser.com.  Many sites offer written solutions that advise, if you hand-type or apply the fix.  Often, the solutions published vary in quality, method, have no error handling, and require more context and understanding than most users have. By simply referring them to that specific App's page, users on that site can simply choose to and safely apply that fix with a single click, (or first install SnapBack).  Read "best practices" and "example answers" to a posted problem, using links to a specific SnapBack App page.</p> 
-
-	<h3>Buy from us, or from our affiliate links:</h3>	
-	<p>(Note:  All sales will be done by Columbia Data Products, publisher of SnapBack Apps)</p>
-	
-	<p>We don't pepper you with ads you don't want to see, or suggest any products that our contributors don't think you need to see right then. You'll be happy if you consider our contributor's recommendations when you see them, since we guarantee the best independent advice and price, along with any of the best alternatives known.</p>
-	
-	<ul>
-		<li>Amazon Affiliate links - Anything you buy when you use this link helps us provide more solutions  [@SMadara: put affiliate link here, with graphic]</li>
-		<li>Microsoft Products -  Contact us, and we'll either provide the best prices on your needs, or advise you who has the best prices.  [Contact us HERE]</li>
-		<li>Google Apps and other Google products and services - CDP is already a dealer for Google, and we will provide you the best prices  [Contact us HERE]</li>
-	</ul>
-
-	<h3>Contribute CASH to SnapBack Apps</h3>
-	<ul>
-		<li>Amazon Payments [ need to verify link for donations ]</li>
-		<li>BitCoins (Get logo, and I will get you an address)</li>
-		<li>Cash  [provide a link or email address]</li>
-		<li>PayPal</li>
-	</ul>
-
-	<h3>Later, we will provide links to:</h3>
-	<ul>
-		<li>Like Us on Facebook: http://www.facebook.com/SnapBack_Apps (future)</li>
-		<li>Follow Us on Twitter: http://twitter.com/SnapBack_Apps (future)</li>
-		<li>Follow Us on Instagram: @SnapBack_Apps (future)</li>
-	</ul>
-	
-	<p><strong>Ensure that any pages in Wikipedia are fair and balanced</strong> that reference SnapBack Apps (later) and Columbia Data Products.</p>
-
-	<h3>Answer Questions on our CONNECT pages for this SnapBack App, or others:</h3>
-	<p><a id="connectpage" href="#" title="Your App's Connect Page">Click Here</a></p>
-
-	<h3>Become a Contributor, Writer, Manager, Helper, Graphic Design or Developer</h3>
-	<p>http://Attracting-New-Developers-to-the-Community</p> 
-
-	<h3>Thanks for Contributing!</h3>
-	<p>This app was created with developers working in collaboration with users like you. We want your input and valuable contributions towards this app! We’d like to hear ANYTHING, good or bad, that you have to say. (We will NEVER hide ANY feedback.*)  Feedback can include any improvements you wish to see in this app, suggested layout/content changes, and development enhancements. We will generally publish edited excerpts from your input.</p>
-	
-	<p><strong>The SnapBack Apps Factory is a platform where</strong> regular users interact with, or become App contributors and developers themselves.  Most technology products initially frustrates users unnecessarily.  If new versions were produced daily, users and developers were constantly communicating, products would quickly evolve to work perfectly.  SnapBack Apps' mission is to modify how any existing hardware and software interacts with ordinary users.   Our Factory connects users, contributors and developers in near real time to create or improve SnapBack Apps.  Changes that are apparently required are quickly communicated, applied and deployed to all users within hours.  Eventually, all changes that any user would ever want, are created and deployed.  The SnapBack Apps Factory platform is where contributors and users of all kinds communicate, design, and ultimately work together to accomplish this mission.</p>
-		
-</div><!--End Tab6-->
+	  
+	  
+</div><!--End content-container--> 	  
 <!-- ************************************************ -->
 <!--                 END: Page Content                -->
 <!-- ************************************************ -->
